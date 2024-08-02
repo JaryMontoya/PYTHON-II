@@ -7,16 +7,7 @@ class Contact(models.Model):
     email = models.EmailField()
     telefono = models.CharField(max_length=20)
     direccion = models.TextField()
-    creado_en = models.DateTimeField(auto_now_add=True)
-
-
-
-from django.db import models
-
-class TestModel(models.Model):
-    name = models.CharField(max_length=100)
-
+    creado_en = models.DateTimeField(auto_now_add=True)  # Cambia de vuelta
 
     def __str__(self):
         return self.nombre
-

@@ -1,0 +1,8 @@
+<!-- home/templates/home/contact_form.html -->
+<h1>New Contact</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'contact_list' %}">Cancel</a>

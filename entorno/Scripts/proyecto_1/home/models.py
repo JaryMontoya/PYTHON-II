@@ -1,3 +1,22 @@
+# home/models.py
+
 from django.db import models
 
-# Create your models here.
+class Contact(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    telefono = models.CharField(max_length=20)
+    direccion = models.TextField()
+    creado_en = models.DateTimeField(auto_now_add=True)
+
+
+
+from django.db import models
+
+class TestModel(models.Model):
+    name = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        return self.nombre
+

@@ -1,0 +1,6 @@
+<!-- home/templates/home/contact_detail.html -->
+<h1>{{ contact.first_name }} {{ contact.last_name }}</h1>
+<p>Email: {{ contact.email }}</p>
+<p>Phone: {{ contact.phone }}</p>
+<a href="{% url 'contact_update' contact.pk %}">Edit</a>
+<a href="{% url 'contact_list' %}">Back to List</a>

@@ -1,0 +1,15 @@
+<!-- home/templates/home/contact_list.html -->
+<h1>Contact List</h1>
+<a href="{% url 'contact_create' %}">Add New Contact</a>
+<ul>
+    {% for contact in contacts %}
+        <li>
+            <a href="{% url 'contact_detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a>
+            <a href="{% url 'contact_update' contact.pk %}">Edit</a>
+            <form action="{% url 'contact_delete' contact.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
